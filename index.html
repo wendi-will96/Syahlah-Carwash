@@ -9,12 +9,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Tambahan Font Montserrat khusus buat logo biar makin garang & sporty! -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        sporty: ['Montserrat', 'sans-serif'], /* Font custom buat logo */
                     },
                     colors: {
                         primary: '#facc15', /* Kuning sporty/racing */
@@ -62,10 +65,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="flex items-center space-x-3 group">
-                        <!-- Kode onerror dihapus biar maksa nampilin Artboard 1.jpg -->
-                        <img src="Artboard 1.jpg" alt="Logo Syahlah" class="h-10 md:h-12 w-auto object-contain group-hover:scale-110 transition-transform">
-                        <span class="text-3xl font-black italic tracking-tighter uppercase text-white hidden sm:block">Syahlah<span class="text-primary">.</span></span>
+                    <a href="#" class="flex items-center group">
+                        <!-- Teks Elegan Syahlah Carwash Tanpa Logo Gambar -->
+                        <div class="flex flex-col justify-center">
+                            <span class="font-sporty text-3xl md:text-4xl italic tracking-wider text-white uppercase leading-none group-hover:text-primary transition-colors duration-300 drop-shadow-md transform -skew-x-6">
+                                Syahlah<span class="text-primary">.</span>
+                            </span>
+                            <span class="font-sporty text-[10px] md:text-xs italic tracking-[0.3em] text-primary uppercase leading-tight mt-1 transform -skew-x-6">
+                                Carwash & Detailing
+                            </span>
+                        </div>
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
@@ -73,9 +82,21 @@
                     <a href="#layanan" class="text-gray-300 hover:text-primary font-bold transition-colors">Layanan & Harga</a>
                     <a href="#bukti" class="text-gray-300 hover:text-primary font-bold transition-colors">Bukti Nyata</a>
                     <a href="#promo-member" class="text-primary hover:text-white font-bold transition-colors animate-pulse">🔥 Promo Member</a>
-                    <a href="https://wa.me/62881012440902" target="_blank" class="bg-primary text-dark px-6 py-2 rounded-full font-black italic transform -skew-x-12 hover:scale-105 transition-transform border-2 border-primary hover:bg-transparent hover:text-primary">
-                        <span class="transform skew-x-12 block">BOOKING NOW</span>
-                    </a>
+                    
+                    <!-- Dropdown Booking -->
+                    <div class="relative group pt-4 pb-4 -my-4">
+                        <button class="bg-primary text-dark px-6 py-2 rounded-full font-black italic transform -skew-x-12 hover:scale-105 transition-transform border-2 border-primary hover:bg-transparent hover:text-primary">
+                            <span class="transform skew-x-12 flex items-center">BOOKING <i class="fa-solid fa-caret-down ml-2"></i></span>
+                        </button>
+                        <div class="absolute top-full right-0 mt-0 w-48 bg-gray-900 border border-gray-800 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                            <a href="https://wa.me/62881012440902" target="_blank" class="block px-4 py-3 text-sm text-white hover:text-dark hover:bg-primary border-b border-gray-800 transition-colors font-bold">
+                                <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> Admin Bocil
+                            </a>
+                            <a href="https://wa.me/6285712315017" target="_blank" class="block px-4 py-3 text-sm text-white hover:text-dark hover:bg-primary transition-colors font-bold">
+                                <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> Owner
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
@@ -92,6 +113,11 @@
                 <a href="#layanan" class="block px-3 py-2 text-base font-bold text-gray-300 hover:text-primary">Layanan & Harga</a>
                 <a href="#bukti" class="block px-3 py-2 text-base font-bold text-gray-300 hover:text-primary">Bukti Nyata</a>
                 <a href="#promo-member" class="block px-3 py-2 text-base font-bold text-primary">🔥 Promo Member</a>
+                <div class="border-t border-gray-800 mt-2 pt-2">
+                    <p class="px-3 py-1 text-xs text-gray-500 uppercase font-bold">Booking WhatsApp:</p>
+                    <a href="https://wa.me/62881012440902" target="_blank" class="block px-3 py-2 text-base font-bold text-green-400 hover:text-green-300"><i class="fa-brands fa-whatsapp mr-2"></i>Admin Bocil</a>
+                    <a href="https://wa.me/6285712315017" target="_blank" class="block px-3 py-2 text-base font-bold text-green-400 hover:text-green-300"><i class="fa-brands fa-whatsapp mr-2"></i>Owner</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -109,21 +135,26 @@
                     Premium Auto Detailing Depok
                 </div>
                 <h1 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-tight mb-6">
-                    Bikin Mobil Loe <br>
+                    Bikin Mobil Lo <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-600">Glowing Maksimal</span>
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 font-medium mb-8 border-l-2 border-gray-600 pl-4">
                     Pusat perawatan mobil & motor paling proper di Sawangan. Dari cuci santai sampai coating sultan, kita sikat habis!
                 </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <div class="flex flex-wrap gap-4">
                     <a href="#layanan" class="inline-flex justify-center items-center px-8 py-4 bg-primary text-dark font-black italic rounded transform -skew-x-12 hover:scale-105 transition-all">
                         <span class="transform skew-x-12 flex items-center">
                             CEK HARGA <i class="fa-solid fa-arrow-right ml-2"></i>
                         </span>
                     </a>
-                    <a href="https://wa.me/62881012440902" target="_blank" class="inline-flex justify-center items-center px-8 py-4 bg-transparent border-2 border-primary text-primary font-black italic rounded transform -skew-x-12 hover:bg-primary hover:text-dark transition-all">
+                    <a href="https://wa.me/62881012440902" target="_blank" class="inline-flex justify-center items-center px-6 py-4 bg-transparent border-2 border-primary text-primary font-black italic rounded transform -skew-x-12 hover:bg-primary hover:text-dark transition-all">
                         <span class="transform skew-x-12 flex items-center">
-                            <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> TANYA ADMIN BOCIL
+                            <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> ADMIN BOCIL
+                        </span>
+                    </a>
+                    <a href="https://wa.me/6285712315017" target="_blank" class="inline-flex justify-center items-center px-6 py-4 bg-transparent border-2 border-white text-white font-black italic rounded transform -skew-x-12 hover:bg-white hover:text-dark transition-all">
+                        <span class="transform skew-x-12 flex items-center">
+                            <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> WA OWNER
                         </span>
                     </a>
                 </div>
@@ -180,11 +211,11 @@
                         <ul class="space-y-3 mb-6">
                             <li class="flex justify-between items-center border-b border-gray-800 pb-2">
                                 <span class="text-gray-300 font-semibold"><i class="fa-solid fa-car-side text-primary mr-2 text-sm"></i> Cuci Non Hidrolik</span>
-                                <span class="text-white font-black">45K</span>
+                                <span class="text-white font-black">45.000</span>
                             </li>
                             <li class="flex justify-between items-center border-b border-gray-800 pb-2">
                                 <span class="text-gray-300 font-semibold"><i class="fa-solid fa-arrow-up-from-bracket text-primary mr-2 text-sm"></i> Cuci Hidrolik</span>
-                                <span class="text-white font-black">55K</span>
+                                <span class="text-white font-black">55.000</span>
                             </li>
                         </ul>
                     </div>
@@ -193,26 +224,34 @@
                 <!-- Card 2: Treatment -->
                 <div class="bg-gray-900 rounded-xl overflow-hidden shadow-xl border border-gray-800 hover:border-primary transition-colors group flex flex-col">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1605810711744-5cb3a22131eb?auto=format&fit=crop&w=600&q=80" alt="Treatment Mobil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <!-- Gambar treatment diperbarui jadi lebih kece -->
+                        <img src="https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&w=600&q=80" alt="Treatment Mobil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                         <h3 class="absolute bottom-4 left-4 text-2xl font-black italic text-white uppercase">🛡️ Treatment</h3>
                     </div>
                     <div class="p-6 flex-grow">
                         <p class="text-gray-400 text-sm mb-4">Perawatan ekstra buat ngilangin noda membandel & perlindungan bodi.</p>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex flex-col border-b border-gray-800 pb-2">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-gray-300 font-semibold text-sm"><i class="fa-solid fa-gears text-primary mr-2"></i> Cuci Mesin + Cuci Mobil</span>
-                                    <span class="text-white font-black text-sm">Mulai 115K</span>
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex justify-between items-center border-b border-gray-800 pb-3 hover:border-gray-600 transition-colors">
+                                <span class="text-gray-300 font-semibold text-sm flex items-center"><i class="fa-solid fa-gears text-primary mr-3 w-4 text-center"></i> Cuci Mesin + Bodi</span>
+                                <div class="text-right">
+                                    <span class="text-gray-500 text-[9px] font-bold tracking-widest uppercase block mb-0.5">Start From</span>
+                                    <span class="text-white font-black text-sm">115.000</span>
                                 </div>
                             </li>
-                            <li class="flex justify-between items-center border-b border-gray-800 pb-2">
-                                <span class="text-gray-300 font-semibold text-sm"><i class="fa-solid fa-shield-halved text-primary mr-2"></i> Cuci Sealant Wax</span>
-                                <span class="text-white font-black text-sm">135K</span>
+                            <li class="flex justify-between items-center border-b border-gray-800 pb-3 hover:border-gray-600 transition-colors">
+                                <span class="text-gray-300 font-semibold text-sm flex items-center"><i class="fa-solid fa-shield-halved text-primary mr-3 w-4 text-center"></i> Cuci Sealant Wax</span>
+                                <div class="text-right">
+                                    <span class="text-gray-500 text-[9px] font-bold tracking-widest uppercase block mb-0.5">Start From</span>
+                                    <span class="text-white font-black text-sm">135.000</span>
+                                </div>
                             </li>
-                            <li class="flex justify-between items-center border-b border-gray-800 pb-2">
-                                <span class="text-gray-300 font-semibold text-sm"><i class="fa-solid fa-droplet-slash text-primary mr-2"></i> Jamur Kaca</span>
-                                <span class="text-white font-black text-sm">Mulai 225K</span>
+                            <li class="flex justify-between items-center border-b border-gray-800 pb-3 hover:border-gray-600 transition-colors">
+                                <span class="text-gray-300 font-semibold text-sm flex items-center"><i class="fa-solid fa-droplet-slash text-primary mr-3 w-4 text-center"></i> Jamur Kaca</span>
+                                <div class="text-right">
+                                    <span class="text-gray-500 text-[9px] font-bold tracking-widest uppercase block mb-0.5">Start From</span>
+                                    <span class="text-white font-black text-sm">225.000</span>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -228,30 +267,44 @@
                     </div>
                     <div class="p-6 flex-grow">
                         <p class="text-gray-400 text-sm mb-4">Kembali seperti baru keluar dari dealer! Kinclong & terproteksi maksimal.</p>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex justify-between items-center border-b border-gray-800 pb-2">
-                                <span class="text-gray-300 font-semibold text-sm">Poles Interior</span>
-                                <span class="text-white font-black text-sm">Mulai 600K</span>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-gray-800 pb-2">
-                                <span class="text-gray-300 font-semibold text-sm">Poles Eksterior</span>
-                                <span class="text-white font-black text-sm">Mulai 1.150K</span>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-gray-800 pb-2">
-                                <span class="text-gray-300 font-semibold text-sm">Detailing</span>
-                                <span class="text-primary font-black text-sm">Start 2.000K</span>
-                            </li>
-                            <li class="flex justify-between items-center border-b border-gray-800 pb-2">
-                                <span class="text-gray-300 font-semibold text-sm">Coating Saja</span>
-                                <span class="text-white font-black text-sm">Mulai 1.000K</span>
-                            </li>
-                            <li class="flex flex-col pt-1 bg-gray-800/50 p-2 rounded border-l-2 border-primary">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-white font-bold text-xs uppercase">👑 Full Treatment</span>
+                        <ul class="space-y-4 mb-6">
+                            <li class="flex justify-between items-center border-b border-gray-800 pb-3 hover:border-gray-600 transition-colors">
+                                <span class="text-gray-300 font-semibold text-sm flex items-center"><i class="fa-solid fa-couch text-gray-500 mr-3 w-4 text-center"></i> Poles Interior</span>
+                                <div class="text-right">
+                                    <span class="text-gray-500 text-[9px] font-bold tracking-widest uppercase block mb-0.5">Start From</span>
+                                    <span class="text-white font-black text-sm">600.000</span>
                                 </div>
-                                <div class="flex justify-between items-center mt-1">
-                                    <span class="text-gray-400 text-[10px]">(Detailing+Polis+Coating)</span>
-                                    <span class="text-primary font-black text-sm">Mulai 3.000K</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-gray-800 pb-3 hover:border-gray-600 transition-colors">
+                                <span class="text-gray-300 font-semibold text-sm flex items-center"><i class="fa-solid fa-car text-gray-500 mr-3 w-4 text-center"></i> Poles Eksterior</span>
+                                <div class="text-right">
+                                    <span class="text-gray-500 text-[9px] font-bold tracking-widest uppercase block mb-0.5">Start From</span>
+                                    <span class="text-white font-black text-sm">1.150.000</span>
+                                </div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-gray-800 pb-3 hover:border-gray-600 transition-colors">
+                                <span class="text-gray-300 font-semibold text-sm flex items-center"><i class="fa-solid fa-wand-magic-sparkles text-primary mr-3 w-4 text-center"></i> Detailing</span>
+                                <div class="text-right">
+                                    <span class="text-gray-500 text-[9px] font-bold tracking-widest uppercase block mb-0.5">Start From</span>
+                                    <span class="text-primary font-black text-sm">2.000.000</span>
+                                </div>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-gray-800 pb-3 hover:border-gray-600 transition-colors">
+                                <span class="text-gray-300 font-semibold text-sm flex items-center"><i class="fa-solid fa-layer-group text-gray-500 mr-3 w-4 text-center"></i> Coating Saja</span>
+                                <div class="text-right">
+                                    <span class="text-gray-500 text-[9px] font-bold tracking-widest uppercase block mb-0.5">Start From</span>
+                                    <span class="text-white font-black text-sm">1.000.000</span>
+                                </div>
+                            </li>
+                            <!-- Update Layout Full Treatment -->
+                            <li class="flex flex-col bg-gray-800/50 p-3.5 rounded-lg border-l-4 border-primary mt-2 hover:bg-gray-800 transition-colors">
+                                <div>
+                                    <span class="text-white font-bold text-sm uppercase flex items-center tracking-wide"><i class="fa-solid fa-crown text-primary mr-3 w-4 text-center"></i> Full Treatment</span>
+                                    <span class="text-gray-400 text-[10px] ml-7 block mt-0.5">(Detailing + Polis + Coating)</span>
+                                </div>
+                                <div class="ml-7 mt-3 flex items-center justify-between border-t border-gray-700/70 pt-2">
+                                    <span class="text-primary text-[10px] font-bold tracking-widest uppercase">Start From</span>
+                                    <span class="text-white font-black text-sm md:text-base">3.000.000</span>
                                 </div>
                             </li>
                         </ul>
@@ -388,21 +441,28 @@
                         <h3 class="text-2xl font-black italic text-white mb-2 text-center">📝 Form Daftar Member</h3>
                         <p class="text-gray-500 text-sm text-center mb-6">Isi data di bawah, langsung sat-set kita proses!</p>
                         
-                        <form id="memberForm" class="space-y-4">
+                        <!-- Iframe tersembunyi buat nampung respon biar gak pindah halaman -->
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                        
+                        <!-- Perhatikan action dan method-nya udah diganti buat nembak ke Google Form -->
+                        <form id="memberForm" class="space-y-4" action="https://docs.google.com/forms/d/e/ISI_ID_FORM_LO_DISINI/formResponse" method="POST" target="hidden_iframe">
                             <div>
                                 <label class="block text-gray-400 text-sm mb-1">Jenis Kendaraan (Mobil/Motor)</label>
-                                <input type="text" required class="w-full bg-gray-900 text-white border border-gray-700 rounded p-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Contoh: Mobil - Honda Civic">
+                                <!-- name="entry.111111" ini nanti lo ganti pake ID asli dari Google Form lo -->
+                                <input type="text" name="entry.111111" required class="w-full bg-gray-900 text-white border border-gray-700 rounded p-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Contoh: Mobil - Honda Civic">
                             </div>
                             <div>
                                 <label class="block text-gray-400 text-sm mb-1">Nomor Polisi</label>
-                                <input type="text" required class="w-full bg-gray-900 text-white border border-gray-700 rounded p-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Contoh: B 1234 XYZ">
+                                <!-- name="entry.222222" ini nanti lo ganti pake ID asli dari Google Form lo -->
+                                <input type="text" name="entry.222222" required class="w-full bg-gray-900 text-white border border-gray-700 rounded p-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Contoh: B 1234 XYZ">
                             </div>
                             <div>
                                 <label class="block text-gray-400 text-sm mb-1">Nomor HP / WhatsApp Aktif</label>
-                                <input type="tel" required class="w-full bg-gray-900 text-white border border-gray-700 rounded p-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Contoh: 081234567890">
+                                <!-- name="entry.333333" ini nanti lo ganti pake ID asli dari Google Form lo -->
+                                <input type="tel" name="entry.333333" required class="w-full bg-gray-900 text-white border border-gray-700 rounded p-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Contoh: 081234567890">
                             </div>
                             
-                            <!-- Checkbox Wajib Follow -->
+                            <!-- Checkbox Wajib Follow (Ga perlu dimasukin ke G-Form, cuma buat centangan formalitas web) -->
                             <div class="flex items-start mt-4 bg-gray-900 p-3 rounded border border-gray-700">
                                 <div class="flex-shrink-0 h-5 w-5">
                                     <input type="checkbox" required id="wajib_follow" class="h-4 w-4 rounded border-gray-600 bg-gray-700 text-primary focus:ring-primary focus:ring-offset-gray-900">
@@ -462,10 +522,16 @@
                 
                 <!-- Info Bisnis -->
                 <div>
-                    <a href="#" class="flex items-center space-x-3 mb-4 group inline-flex">
-                        <!-- Kode onerror dihapus juga di footer -->
-                        <img src="Artboard 1.jpg" alt="Logo Syahlah" class="h-12 w-auto object-contain group-hover:scale-110 transition-transform">
-                        <span class="text-3xl font-black italic tracking-tighter text-white uppercase">Syahlah<span class="text-primary">.</span></span>
+                    <a href="#" class="flex items-center mb-6 group inline-flex">
+                        <!-- Teks Elegan di Footer -->
+                        <div class="flex flex-col justify-center">
+                            <span class="font-sporty text-4xl md:text-5xl italic tracking-wider text-white uppercase leading-none group-hover:text-primary transition-colors duration-300 drop-shadow-md transform -skew-x-6">
+                                Syahlah<span class="text-primary">.</span>
+                            </span>
+                            <span class="font-sporty text-xs md:text-sm italic tracking-[0.3em] text-primary uppercase leading-tight mt-1 transform -skew-x-6">
+                                Carwash & Detailing
+                            </span>
+                        </div>
                     </a>
                     <p class="text-gray-400 mb-4 text-sm leading-relaxed">
                         Spesialis cuci mobil & auto detailing premium. Bikin mobil kusam balik glowing kayak baru keluar dari dealer!
@@ -537,16 +603,25 @@
     </footer>
 
     <script>
+        // Variabel sakti buat ngecek form udah dipencet kirim atau belum
+        let submitted = false;
+
+        // Tangkap event form disubmit
+        document.getElementById('memberForm').addEventListener('submit', function() {
+            submitted = true;
+        });
+
+        // Tangkap event iframe pas selesai loading respons dari Google Form
+        document.getElementById('hidden_iframe').addEventListener('load', function() {
+            if (submitted) {
+                document.getElementById('memberForm').classList.add('hidden');
+                document.getElementById('form-success').classList.remove('hidden');
+            }
+        });
+
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-
-        // Form submission simulation
-        document.getElementById('memberForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            this.classList.add('hidden');
-            document.getElementById('form-success').classList.remove('hidden');
         });
 
         // Reset form to register another vehicle
@@ -555,6 +630,7 @@
             const form = document.getElementById('memberForm');
             form.classList.remove('hidden');
             form.reset();
+            submitted = false; // balikin status biar bisa ngirim lagi
         });
     </script>
 </body>
